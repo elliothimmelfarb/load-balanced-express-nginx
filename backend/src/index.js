@@ -6,4 +6,8 @@ app.get('/', (req, res) =>  {
    res.send('Hello World!');
 });
 
+app.get('/instance', (req, res) => {
+    res.send(`Hello from instance: ${process.env.INSTANCE}`)
+})
+
 app.listen(3000, () => console.log('I just connected on port 3000!'));

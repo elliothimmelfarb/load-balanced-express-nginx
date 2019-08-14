@@ -5,18 +5,25 @@ services:
     tty: true
     volumes: 
       - './backend/src:/backend-dir-inside-container'
+    environment:
+      - INSTANCE=backend1
+    
 
   backend2:
     build: ./backend
     tty: true
     volumes: 
       - './backend/src:/backend-dir-inside-container'
+    environment:
+      - INSTANCE=backend2
 
   backend3:
     build: ./backend
     tty: true
     volumes: 
       - './backend/src:/backend-dir-inside-container'
+    environment:
+      - INSTANCE=backend3
 
   loadbalancer:
     build: ./load-balancer
